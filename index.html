@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>GameHub — трекер игр</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Шапка -->
+        <header class="header">
+            <div class="header__top">
+                <h1 class="header__title">🎮 GameHub</h1>
+                <div class="favorites-info">
+                    <span class="favorites-info__icon">❤️</span>
+                    <span class="favorites-info__count" id="favoritesCount">0</span>
+                </div>
+            </div>
+            <p class="header__subtitle">Твой персональный трекер видеоигр</p>
+        </header>
+
+        <!-- Панель управления -->
+        <div class="controls">
+            <div class="controls__row">
+                <div class="search-box">
+                    <input type="text" id="searchInput" class="search-box__input" placeholder="🔍 Поиск игры...">
+                </div>
+                <div class="filter-box">
+                    <select id="genreFilter" class="filter-box__select">
+                        <option value="all">Все жанры</option>
+                        <option value="RPG">RPG</option>
+                        <option value="Action">Экшен</option>
+                        <option value="Shooter">Шутер</option>
+                        <option value="Adventure">Приключения</option>
+                        <option value="Strategy">Стратегия</option>
+                    </select>
+                </div>
+                <div class="sort-box">
+                    <select id="sortBy" class="sort-box__select">
+                        <option value="default">Сортировка</option>
+                        <option value="price-asc">Цена: дешевле ↑</option>
+                        <option value="price-desc">Цена: дороже ↓</option>
+                        <option value="rating-desc">Рейтинг: высокий ↓</option>
+                        <option value="rating-asc">Рейтинг: низкий ↑</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Калькулятор стоимости -->
+        <div class="calculator">
+            <div class="calculator__info">
+                <span class="calculator__label">💰 Общая стоимость коллекции:</span>
+                <span class="calculator__value" id="totalPrice">0</span>
+                <span class="calculator__currency">₽</span>
+            </div>
+        </div>
+
+        <!-- Сетка игр -->
+        <div class="games-grid" id="gamesGrid">
+            <!-- Карточки будут загружены через JS -->
+        </div>
+
+        <!-- Сообщение об отсутствии результатов -->
+        <div class="no-results" id="noResults" style="display: none;">
+            <p>😔 Ничего не найдено</p>
+            <p class="no-results__hint">Попробуй изменить параметры поиска или фильтра</p>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
