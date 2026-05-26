@@ -31,6 +31,7 @@ jobs:
         browser: chrome
         headed: false
         wait-on: 'http://localhost:8080'
+        spec: cypress/e2e/*.cy.js
     
     - name: Upload test artifacts
       if: always()
